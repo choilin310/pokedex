@@ -19,6 +19,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <p className="atoz">
+        A -&gt;Z
+      </p>
     </div>
   );
 };
