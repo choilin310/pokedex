@@ -66,6 +66,7 @@ const PokemonCard = ({
         className="right"
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
+        onClick={modalHandler}
       >
         <img src={image} alt={name} className="right-image" />
         <p style={{ width: "270px" }}>No. {id}</p>
