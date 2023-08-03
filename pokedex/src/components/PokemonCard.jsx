@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./pokemoncard.css";
 import pokeball from "../images/pokeball.png";
-import Modal from "./Modal"
+import Modal from "./Modal";
 
 const PokemonCard = ({
   id,
@@ -20,7 +20,7 @@ const PokemonCard = ({
     setModalIsOpen(true);
   }
 
-  function CloseModalHandler() {
+  function closeModalHandler() {
     setModalIsOpen(false);
   }
 
@@ -30,18 +30,21 @@ const PokemonCard = ({
         <div className="show">
           <div className="stat-container-title">
             <img src={image} alt={name} className="image-title" />
-            <p className="number-style">No. {id}</p>
+            <p style={{ width: "180px", color: "black" }}>No. {id}</p>
             <p>{name}</p>
             <img src={pokeball} alt="pokeball" className="pokeball-title" />
           </div>
           <img src={image} alt={name} />
-          <div className="stats">
-            <div className="stats-left">
+          <div style={{ display: "flex", width: "100%" }}>
+            <div
+              style={{ background: "#dbdbd9", textAlign: "center" }}
+              className="stats-left"
+            >
               <p>Type</p>
               <p>Height</p>
               <p>Weight</p>
             </div>
-            <div className="stats-right">
+            <div style={{ background: "#ffffff" }} className="stats-right">
               <p>{type}</p>
               <p>{height}0 cm</p>
               <p>{weight} lbs</p>
@@ -68,7 +71,11 @@ const PokemonCard = ({
         onMouseLeave={() => setIsShown(false)}
         onClick={modalHandler}
       >
-        <img src={image} alt={name} className="right-image" />
+        <img
+          src={image}
+          alt={name}
+          style={{ maxHeight: "50px", marginRight: "10px", width: "50px" }}
+        />
         <p style={{ width: "270px" }}>No. {id}</p>
         <p>{name}</p>
         <img
@@ -79,15 +86,15 @@ const PokemonCard = ({
       </div>
       {modalIsOpen && (
         <Modal
-        id={id}
-        name={name}
-        image={image}
-        height={height}
-        weight={weight}
-        stats={stats}
-        statsName={statsName}
-        type={type}
-        onClick={CloseModalHandler}
+          id={id}
+          name={name}
+          image={image}
+          height={height}
+          weight={weight}
+          stats={stats}
+          statsName={statsName}
+          type={type}
+          onClick={closeModalHandler}
         />
       )}
     </div>

@@ -4,6 +4,7 @@ import "./pokelist.css";
 
 const PokeList = () => {
   const [allPokemon, setAllPokemon] = useState([]);
+  
   const getAllPokemon = async () => {
     const res = await fetch(
       "https://pokeapi.co/api/v2/pokemon?limit=649&offset=0"
@@ -21,7 +22,6 @@ const PokeList = () => {
       });
     }
     createPokemonObject(data.results);
-    console.log(allPokemon);
   };
 
   useEffect(() => {

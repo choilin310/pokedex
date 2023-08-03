@@ -6,6 +6,7 @@
     background: black;
     display: flex;
     align-items: center;
+    justify-content: end;
     grid-template: 30px;
     padding-right: 50px;
 }
